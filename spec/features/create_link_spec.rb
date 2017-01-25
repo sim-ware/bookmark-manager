@@ -10,4 +10,13 @@ feature 'Seeing links' do
       expect(page).to have_content('Makers Academy')
     end
   end
+  scenario 'add a new link' do
+    visit '/links/new'
+    fill_in :title, with: 'Google'
+    fill_in :url, with: 'http://google.com'
+    click_button 'Add'
+    within 'ul#links' do
+      expect(page).to have_content('Google')
+    end
+  end
 end
