@@ -5,7 +5,7 @@ require_relative 'data_mapper_setup'
 
 class BookmarkManager < Sinatra::Base
   get '/' do
-    'Hello BookmarkManager!'
+    redirect '/links'
   end
 
   get '/links' do
@@ -14,7 +14,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/links/new' do
-    erb :'links/form'
+    erb :'links/new'
   end
 
   post '/links' do
