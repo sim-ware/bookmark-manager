@@ -25,7 +25,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/signup' do
-    User.create(email: params[:email], password: params[:password])
+    user = User.create(email: params[:email], password: params[:password])
     session[:user_id] = user.id
     redirect to('/links')
   end
