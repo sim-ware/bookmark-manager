@@ -9,7 +9,7 @@ feature 'Adding tags' do
     fill_in :tags,  with: 'education'
     click_button 'Add'
     link = Link.first
-    expect(link.tags.map(&:tag_name)).to include('education')
+    expect(link.tags.map(&:name)).to include('education')
   end
 
   scenario 'multiple tags via the new link form' do
@@ -19,7 +19,7 @@ feature 'Adding tags' do
     fill_in :tags,  with: 'education, technology'
     click_button 'Add'
     link = Link.first
-    expect(link.tags.map(&:tag_name)).to include('education', 'technology')
+    expect(link.tags.map(&:name)).to include('education', 'technology')
   end
 
 end

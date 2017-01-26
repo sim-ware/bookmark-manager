@@ -2,9 +2,9 @@ require 'spec_helper'
 
 feature 'Viewing tagged links' do
   before(:each) do
-    Link.create(url: 'http://www.makersacademy.com', title: 'Makers Academy', tags: [Tag.first_or_create(tag_name: 'education')])
-    Link.create(url: 'http://www.bubblemania.com', title: 'Bubble Mania', tags: [Tag.first_or_create(tag_name: 'bubbles')])
-    Link.create(url: 'http://www.bubblefrenzy.com', title: 'Bubble Frenzy', tags: [Tag.first_or_create(tag_name: 'bubbles')])
+    Link.create(url: 'http://www.makersacademy.com', title: 'Makers Academy', tags: [Tag.first_or_create(name: 'education')])
+    Link.create(url: 'http://www.bubblemania.com', title: 'Bubble Mania', tags: [Tag.first_or_create(name: 'bubbles')])
+    Link.create(url: 'http://www.bubblefrenzy.com', title: 'Bubble Frenzy', tags: [Tag.first_or_create(name: 'bubbles')])
   end
 
   scenario 'on a dedicated tag page' do
